@@ -251,7 +251,7 @@ export default function FriendsScreen() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="flex gap-1 p-1 rounded-xl"
+        className="flex gap-1 p-1 rounded-xl glass-card"
         style={{ backgroundColor: theme.bgCard }}>
         {([
           { key: 'friends' as const, label: 'Друзья', icon: <Users size={14} /> },
@@ -295,7 +295,7 @@ export default function FriendsScreen() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.04, duration: 0.3 }}
-                className="flex items-center gap-2.5 px-3 py-2 rounded-xl"
+                className="flex items-center gap-2.5 px-3 py-2 rounded-xl glass-card"
                 style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
                 <motion.div
                   whileHover={{ scale: 1.1 }}
@@ -792,7 +792,7 @@ export default function FriendsScreen() {
           className="space-y-3">
           
           {/* Рефералы — объединённый блок */}
-          <div className="rounded-2xl p-4 transition-colors"
+          <div className="rounded-2xl p-4 transition-colors glass-card"
             style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
             <button
               onClick={() => setShowRefDashboard(!showRefDashboard)}
@@ -1027,7 +1027,7 @@ export default function FriendsScreen() {
       </AnimatePresence>
 
       {/* Достижения — в самом низу */}
-      <div className="rounded-2xl p-4 transition-colors"
+      <div className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <button
           onClick={() => setShowRefAchievements(!showRefAchievements)}

@@ -73,7 +73,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
         initial={{ opacity: 0, y: -20, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-        className="rounded-2xl overflow-hidden transition-colors"
+        className="rounded-2xl overflow-hidden transition-colors glass-card"
         style={{ border: `2px solid ${user.cardColor}40` }}>
         <div className="h-20 relative"
           style={{ background: `linear-gradient(135deg, ${bgPreset.from}, ${bgPreset.to})` }}>
@@ -191,7 +191,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
-          className="rounded-2xl p-4 space-y-4 transition-colors"
+          className="rounded-2xl p-4 space-y-4 transition-colors glass-card"
           style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
           <div className="flex items-center gap-2 mb-1">
             <Palette size={16} style={{ color: theme.accent }} />
@@ -266,7 +266,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="rounded-2xl p-4 transition-colors"
+        className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <div className="flex items-center gap-2 mb-3">
           <Rocket size={16} style={{ color: theme.accent }} />
@@ -325,7 +325,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="rounded-2xl p-4 transition-colors"
+        className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <button onClick={() => setShowShareholders(!showShareholders)}
           className="w-full flex items-center justify-between">
@@ -366,7 +366,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35 }}
-          className="rounded-2xl p-4 transition-colors"
+          className="rounded-2xl p-4 transition-colors glass-card"
           style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
           <p className="text-sm font-semibold mb-3" style={{ color: theme.textPrimary }}>📈 История трейдов</p>
           <TradeHistoryChart trades={trades} />
@@ -378,7 +378,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="rounded-2xl overflow-hidden transition-colors"
+        className="rounded-2xl overflow-hidden transition-colors glass-card"
         style={{
           backgroundColor: user.premium ? theme.accentGold + '06' : theme.bgCard,
           border: `1px solid ${user.premium ? theme.accentGold + '25' : theme.bgCardBorder}`,
@@ -452,7 +452,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.45 }}
-        className="rounded-2xl p-4 space-y-3 transition-colors"
+        className="rounded-2xl p-4 space-y-3 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <p className="font-semibold text-sm mb-1" style={{ color: theme.textPrimary }}>⚙️ Настройки</p>
         

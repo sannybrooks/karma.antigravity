@@ -550,7 +550,7 @@ export function AdvisorScreen() {
         <p className="text-sm text-center mb-4" style={{ color: theme.textSecondary }}>
           Персональные рекомендации, анализ рисков и стратегии. Доступно только с Premium.
         </p>
-        <div className="rounded-xl p-3 w-full" style={{ backgroundColor: theme.inputBg }}>
+        <div className="rounded-xl p-3 w-full glass-card" style={{ backgroundColor: theme.inputBg }}>
           <p className="text-xs text-center" style={{ color: theme.textMuted }}>
             👑 Premium: 500 $KARMA/мес — AI-советник, +25% дивиденды, безлимит трейдов
           </p>
@@ -571,7 +571,7 @@ export function AdvisorScreen() {
         ].map((card, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05 }}
-            className="rounded-lg p-2 text-center" style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
+            className="rounded-lg p-2 text-center glass-card" style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
             <div className="flex justify-center mb-0.5" style={{ color: card.color }}>{card.icon}</div>
             <p className="text-[9px]" style={{ color: theme.textMuted }}>{card.label}</p>
             <p className="text-xs font-bold" style={{ color: card.color }}>{card.value}</p>
@@ -584,7 +584,7 @@ export function AdvisorScreen() {
         <motion.button
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           onClick={() => setShowInsights(!showInsights)}
-          className="w-full rounded-xl px-3 py-2 mb-2 flex items-center justify-between active:scale-[0.98] transition-transform"
+          className="w-full rounded-xl px-3 py-2 mb-2 flex items-center justify-between active:scale-[0.98] transition-transform glass-card"
           style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
           <div className="flex items-center gap-2">
             <Zap size={14} style={{ color: theme.accentGold }} />
@@ -644,7 +644,7 @@ export function AdvisorScreen() {
       </AnimatePresence>
 
       {/* Чат */}
-      <div className="flex-1 rounded-2xl overflow-hidden flex flex-col"
+      <div className="flex-1 rounded-2xl overflow-hidden flex flex-col glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
 
         {/* Хэдер чата */}

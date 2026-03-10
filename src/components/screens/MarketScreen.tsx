@@ -49,7 +49,7 @@ export function MarketScreen() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="mx-4 mb-3 bg-gradient-to-r from-[#FFD700]/20 to-[#FF6B00]/20 rounded-2xl p-3 flex items-center gap-2 border border-[#FFD700]/30">
+          className="mx-4 mb-3 bg-gradient-to-r from-[#FFD700]/20 to-[#FF6B00]/20 rounded-2xl p-3 flex items-center gap-2 border border-[#FFD700]/30 glass-card">
           <Zap size={18} className="text-[#FFD700] shrink-0" />
           <div className="flex-1">
             <p className="text-sm font-bold" style={{ color: theme.accentGold }}>{activeEvent.name}</p>
@@ -122,7 +122,7 @@ export function MarketScreen() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="mx-4 mb-3 rounded-xl p-2.5 text-center"
+          className="mx-4 mb-3 rounded-xl p-2.5 text-center glass-card"
           style={{ backgroundColor: '#FFD70008', border: '1px solid #FFD70020' }}>
           <p className="text-[10px]" style={{ color: theme.textMuted }}>
             🔒 VIP акции и приоритет ордеров доступны с <span style={{ color: '#FFD700', fontWeight: 700 }}>Premium</span>
@@ -135,7 +135,7 @@ export function MarketScreen() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="mx-4 mb-3 rounded-xl p-2.5 flex items-center justify-between"
+          className="mx-4 mb-3 rounded-xl p-2.5 flex items-center justify-between glass-card"
           style={{ background: 'linear-gradient(135deg, #FFD70010, #FF8C0010)', border: '1px solid #FFD70025' }}>
           <div className="flex items-center gap-2">
             <span className="text-sm">👑</span>
@@ -175,7 +175,7 @@ export function MarketScreen() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06, type: 'spring', stiffness: 260, damping: 20 }}
-              className="rounded-2xl overflow-hidden transition-all"
+              className="rounded-2xl overflow-hidden transition-all glass-card"
               style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
               
               {/* === Верхняя строка: аватар + имя + бейджи === */}

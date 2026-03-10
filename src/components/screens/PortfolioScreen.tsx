@@ -46,7 +46,7 @@ function DailyReport({ user, holdings, shares, trades, isPremium, theme }: {
   const worstPosition = positionsWithPNL[positionsWithPNL.length - 1];
 
   return (
-    <div className="rounded-2xl p-4 transition-colors"
+    <div className="rounded-2xl p-4 transition-colors glass-card"
       style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
       <div className="flex items-center gap-2 mb-3">
         <FileText size={16} style={{ color: theme.accent }} />
@@ -307,7 +307,7 @@ export function PortfolioScreen() {
         initial={{ opacity: 0, y: -20, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 22 }}
-        className="rounded-2xl overflow-hidden transition-colors"
+        className="rounded-2xl overflow-hidden transition-colors glass-card"
         style={{ border: `2px solid ${user.cardColor}40`, background: `linear-gradient(180deg, ${user.cardColor}08, ${theme.bgCard})` }}>
         
         <div className="p-4 pb-2">
@@ -411,7 +411,7 @@ export function PortfolioScreen() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.15 }}
-        className="rounded-2xl p-4 transition-colors"
+        className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <div className="flex items-center gap-2 mb-3">
           <Wallet size={18} style={{ color: theme.accentGold }} />
@@ -451,7 +451,7 @@ export function PortfolioScreen() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25 }}
-          className="rounded-2xl p-4 transition-colors"
+          className="rounded-2xl p-4 transition-colors glass-card"
           style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
           <p className="text-sm font-semibold mb-3" style={{ color: theme.textPrimary }}>📊 Распределение портфеля</p>
           <PieChartCanvas portfolio={portfolio} totalValue={totalValue} />
@@ -464,7 +464,7 @@ export function PortfolioScreen() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="rounded-2xl p-4 transition-colors"
+          className="rounded-2xl p-4 transition-colors glass-card"
           style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
           <p className="text-sm font-semibold mb-3" style={{ color: theme.textPrimary }}>📈 История PNL</p>
           <PnlChart trades={trades} />
@@ -486,7 +486,7 @@ export function PortfolioScreen() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-10 rounded-2xl" style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
+              className="text-center py-10 rounded-2xl glass-card" style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
               <p className="text-4xl mb-2">📭</p>
               <p className="text-sm font-medium mb-1" style={{ color: theme.textMuted }}>Портфель пуст</p>
               <p className="text-xs" style={{ color: theme.textMuted }}>Купите акции на маркете!</p>
@@ -504,7 +504,7 @@ export function PortfolioScreen() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 + index * 0.06, type: 'spring', stiffness: 250, damping: 20 }}
-                className="rounded-2xl overflow-hidden transition-colors"
+                className="rounded-2xl overflow-hidden transition-colors glass-card"
                 style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
                 <div className="p-3 flex items-center gap-3 cursor-pointer"
                   onClick={() => setExpandedCard(isExpanded ? null : p.shareId)}>

@@ -182,7 +182,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
   return (
     <div className="px-4 pb-4 space-y-4">
       {/* ===== ЕЖЕДНЕВНЫЕ КВЕСТЫ ===== */}
-      <div className="rounded-2xl p-4 transition-colors"
+      <div className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <button
           onClick={() => setShowDailyQuests(!showDailyQuests)}
@@ -269,7 +269,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
       </div>
 
       {/* ===== РЕФЕРАЛЬНЫЕ ЗАДАНИЯ ===== */}
-      <div className="rounded-2xl p-4 transition-colors"
+      <div className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <button
           onClick={() => setShowRefTasks(!showRefTasks)}
@@ -375,7 +375,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
 
       {/* ===== РЕФЕРАЛЬНЫЕ ДОХОДЫ — КНОПКА ЗАБРАТЬ ===== */}
       {user.referralPendingEarnings > 0 && (
-        <div className="rounded-2xl p-4 transition-colors"
+        <div className="rounded-2xl p-4 transition-colors glass-card"
           style={{ backgroundColor: theme.accentGold + '08', border: `1px solid ${theme.accentGold}30` }}>
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -402,7 +402,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
       )}
 
       {/* ===== CLAIM ALL — Дивиденды ===== */}
-      <div className="rounded-2xl p-4 transition-colors"
+      <div className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.accent + '08', border: `1px solid ${theme.accent}30` }}>
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -467,7 +467,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
       </div>
 
       {/* ===== СТЕЙКИНГ — НОВЫЙ UI ===== */}
-      <div className="rounded-2xl p-4 transition-colors"
+      <div className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${stakingTier.color}30` }}>
         
         {/* Хэдер с уровнем */}
@@ -675,7 +675,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
 
       {/* ===== Premium баннер (для Free) ===== */}
       {!isPremium && (
-        <div className="rounded-2xl overflow-hidden transition-colors" style={{ border: '1px solid #FFD70025' }}>
+        <div className="rounded-2xl overflow-hidden transition-colors glass-card" style={{ border: '1px solid #FFD70025' }}>
           <div className="p-3 text-center" style={{ backgroundColor: '#FFD70008' }}>
             <p className="text-[9px] mb-1" style={{ color: theme.textMuted }}>📢 Реклама</p>
             <div className="rounded-xl p-3 mb-2" style={{ backgroundColor: theme.inputBg }}>
@@ -694,7 +694,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
 
       {/* ===== Premium бонусы (если активен) ===== */}
       {isPremium && (
-        <div className="rounded-2xl p-4 transition-colors"
+        <div className="rounded-2xl p-4 transition-colors glass-card"
           style={{ background: 'linear-gradient(135deg, #FFD70008, #FF8C0008)', border: '1px solid #FFD70020' }}>
           <div className="flex items-center gap-2 mb-2">
             <Sparkles size={16} style={{ color: '#FFD700' }} />
