@@ -17,6 +17,7 @@ import type {
   ReferralEarningRecord,
   StakingRecord,
 } from '../types';
+import { defaultShares } from '../store/initialState';
 
 export class LocalStorageService implements IDataService {
   private prefix = 'km_';
@@ -30,9 +31,10 @@ export class LocalStorageService implements IDataService {
   /* ===== Загрузка всех данных ===== */
   async loadAll(): Promise<IPersistData | null> {
     try {
+      const shares = await this.getShares();
       return {
         user: await this.getUser() || this.getDefaultUser(),
-        shares: await this.getShares() || [],
+        shares: shares && shares.length > 0 ? shares : defaultShares,
         holdings: await this.getHoldings() || [],
         trades: await this.getTrades() || [],
         orders: await this.getOrders() || [],
