@@ -67,3 +67,7 @@ ecosystem.config.js.backup
 bot/node_modules/
 bot/dist/
 bot/.env
+
+# Markdown: запрещаем всё, кроме README.md
+*.md
+!README.md
