@@ -43,11 +43,16 @@ export function BottomNav() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-[calc(16px+env(safe-area-inset-bottom,0px))] pointer-events-none">
+    <div
+      className="fixed left-0 right-0 z-50 px-4 pb-0 pointer-events-none"
+      style={{ bottom: 'calc(10px + max(var(--safe-area-inset-bottom), env(safe-area-inset-bottom, 0px)))' }}
+    >
+      {/* Визуальный отступ от нижнего края + safe-area для iPhone */}
       <motion.nav 
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="max-w-md mx-auto liquid-glass glass-nav glass-hover rounded-[32px] pointer-events-auto p-1.5 flex items-center justify-between"
+        style={{ paddingBottom: 0 }}
       >
         {navItems.map((item, index) => {
           const active = activeScreen === item.screen;

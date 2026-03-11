@@ -50,6 +50,7 @@ export function MarketScreen() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           className="mx-4 mb-3 bg-gradient-to-r from-[#FFD700]/20 to-[#FF6B00]/20 rounded-2xl p-3 flex items-center gap-2 border border-[#FFD700]/30 glass-card">
+          {/* Стеклянный баннер активного события */}
           <Zap size={18} className="text-[#FFD700] shrink-0" />
           <div className="flex-1">
             <p className="text-sm font-bold" style={{ color: theme.accentGold }}>{activeEvent.name}</p>

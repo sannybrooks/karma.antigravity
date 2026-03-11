@@ -247,6 +247,7 @@ export default function FriendsScreen() {
     <div className="pb-4 px-3 space-y-3">
 
       {/* ===== Вкладки с анимацией ===== */}
+      {/* Стеклянный контейнер табов (верхняя панель) */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}

@@ -182,6 +182,7 @@ export function RewardsScreen({ onOpenPremium }: RewardsProps) {
   return (
     <div className="px-4 pb-4 space-y-4">
       {/* ===== ЕЖЕДНЕВНЫЕ КВЕСТЫ ===== */}
+      {/* Стеклянный контейнер блока ежедневных квестов */}
       <div className="rounded-2xl p-4 transition-colors glass-card"
         style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
         <button

@@ -32,17 +32,57 @@ export function App() {
   }, [initStore]);
 
   /* ===== Инициализация Telegram Web App API ===== */
-  useEffect(() => {
-    try {
-      const tg = (window as any).Telegram?.WebApp;
-      if (tg) {
-        tg.ready();
-        tg.expand();
-        // Устанавливаем цвет статус-бара в тон приложению
+useEffect(() => {
+  try {
+    const tg = (window as any).Telegram?.WebApp;
+    if (tg) {
+      tg.ready();
+      
+      // Сначала пробуем расширить на весь доступный экран
+      tg.expand();
+      
+      // Пробуем запросить полноэкранный режим (Bot API 8.0+)
+      try {
+        // Проверяем, поддерживается ли fullscreen
+        if (tg.requestFullscreen) {
+          // Можно добавить небольшую задержку для уверенности
+          setTimeout(() => {
+            tg.requestFullscreen();
+            console.log('Fullscreen requested');
+          }, 100);
+        }
+      } catch (fullscreenError) {
+        console.log('Fullscreen not supported, using expand only');
+      }
+      
+      // Устанавливаем цвет статус-бара в тон приложению
+      if (tg.setHeaderColor) {
         tg.setHeaderColor(mode === 'dark' ? '#0d0d1a' : '#FFFFFF');
       }
-    } catch { /* */ }
-  }, [mode]);
+      
+      // Также можно установить цвет фона (опционально)
+      if (tg.setBackgroundColor) {
+        tg.setBackgroundColor(mode === 'dark' ? '#0d0d1a' : '#FFFFFF');
+      }
+
+      // Визуальные переменные Telegram WebApp: стабильная высота и верхние кнопки
+      const root = document.documentElement;
+      const setViewportVars = () => {
+        const viewport = window.innerHeight;
+        const stable = tg.viewportStableHeight || viewport;
+        root.style.setProperty('--tg-viewport-stable-height', `${stable}px`);
+        root.style.setProperty('--tg-viewport-height', `${viewport}px`);
+        const topControls = Math.max(0, viewport - stable);
+        root.style.setProperty('--tg-top-controls-height', `${topControls}px`);
+      };
+      setViewportVars();
+      tg.onEvent?.('viewportChanged', setViewportVars);
+      return () => tg.offEvent?.('viewportChanged', setViewportVars);
+    }
+  } catch (error) {
+    console.error('Telegram WebApp init error:', error);
+  }
+}, [mode]);
 
   /* ===== Ежедневный логин бонус + сброс квестов ===== */
   useEffect(() => {

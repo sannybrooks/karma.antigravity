@@ -48,6 +48,7 @@ function DailyReport({ user, holdings, shares, trades, isPremium, theme }: {
   return (
     <div className="rounded-2xl p-4 transition-colors glass-card"
       style={{ backgroundColor: theme.bgCard, border: `1px solid ${theme.bgCardBorder}` }}>
+      {/* Стеклянная карточка ежедневного отчета (ключевой блок) */}
       <div className="flex items-center gap-2 mb-3">
         <FileText size={16} style={{ color: theme.accent }} />
         <span className="font-semibold text-sm" style={{ color: theme.textPrimary }}>Подробный отчёт</span>

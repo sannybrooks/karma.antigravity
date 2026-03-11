@@ -174,13 +174,19 @@ export function PremiumModal({ isOpen, onClose }: Props) {
         style={{ backgroundColor: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(6px)' }}
         onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
       >
+        {/* Важно: не перекрывать верхние кнопки Telegram WebApp */}
         <motion.div
           initial={{ y: '100%' }}
           animate={{ y: 0 }}
           exit={{ y: '100%' }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           className="w-full max-w-md rounded-t-3xl overflow-hidden glass-modal"
-          style={{ backgroundColor: theme.bgSecondary, maxHeight: '95vh', overflowY: 'auto' }}
+          style={{
+            backgroundColor: theme.bgSecondary,
+            maxHeight: 'calc(var(--tg-viewport-stable-height, 100vh) - max(var(--tg-top-controls-height), env(safe-area-inset-top, 0px)) - 12px)',
+            marginTop: 'max(var(--tg-top-controls-height), env(safe-area-inset-top, 0px))',
+            overflowY: 'auto',
+          }}
         >
           {/* Конфетти */}
           {showConfetti && (

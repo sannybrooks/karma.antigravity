@@ -338,8 +338,14 @@ export function TradeModal() {
     <div className="fixed inset-0 z-50 flex items-end justify-center"
       style={{ backgroundColor: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
       onClick={handleOverlayClick}>
+      {/* Ограничение высоты: не заходить под верхние кнопки Telegram */}
       <div className="w-full max-w-md rounded-t-3xl pb-[calc(32px+env(safe-area-inset-bottom,0px))] animate-slideUp glass-modal"
-        style={{ backgroundColor: theme.bgSecondary, maxHeight: '96vh', overflowY: 'auto' }}>
+        style={{
+          backgroundColor: theme.bgSecondary,
+          maxHeight: 'calc(var(--tg-viewport-stable-height, 100vh) - max(var(--tg-top-controls-height), env(safe-area-inset-top, 0px)) - 12px)',
+          marginTop: 'max(var(--tg-top-controls-height), env(safe-area-inset-top, 0px))',
+          overflowY: 'auto',
+        }}>
 
         {/* Ручка */}
         <div className="flex justify-center pt-3 pb-1">

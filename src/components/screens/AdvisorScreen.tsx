@@ -550,6 +550,7 @@ export function AdvisorScreen() {
         <p className="text-sm text-center mb-4" style={{ color: theme.textSecondary }}>
           Персональные рекомендации, анализ рисков и стратегии. Доступно только с Premium.
         </p>
+        {/* Стеклянная карточка с промо Premium */}
         <div className="rounded-xl p-3 w-full glass-card" style={{ backgroundColor: theme.inputBg }}>
           <p className="text-xs text-center" style={{ color: theme.textMuted }}>
             👑 Premium: 500 $KARMA/мес — AI-советник, +25% дивиденды, безлимит трейдов

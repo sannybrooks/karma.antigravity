@@ -42,6 +42,7 @@ export function OnboardingModal() {
   
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-6">
+      {/* Центральная стеклянная карточка онбординга */}
       <div className="w-full max-w-sm rounded-3xl p-6 shadow-2xl glass-modal"
         style={{ backgroundColor: theme.bgSecondary, border: `1px solid ${theme.bgCardBorder}` }}>
         <div className="text-center mb-6">

@@ -69,6 +69,7 @@ export function ProfileScreen({ onOpenPremium }: ProfileProps) {
   return (
     <div className="px-4 pb-4 space-y-4">
       {/* ===== Карточка пользователя ===== */}
+      {/* Главная стеклянная карточка профиля */}
       <motion.div
         initial={{ opacity: 0, y: -20, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}

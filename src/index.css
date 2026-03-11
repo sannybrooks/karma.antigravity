@@ -46,6 +46,10 @@
 :root {
   --safe-area-inset-top: 0px;
   --safe-area-inset-bottom: 0px;
+  /* Telegram WebApp viewport-переменные (обновляются в App.tsx) */
+  --tg-viewport-height: 100vh;
+  --tg-viewport-stable-height: 100vh;
+  --tg-top-controls-height: 0px;
 }
 
 body {

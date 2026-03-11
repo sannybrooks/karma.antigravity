@@ -22,6 +22,7 @@ export function NotificationToast() {
 
   return (
     <div className="fixed top-2 left-4 right-4 z-[90] animate-slideDown">
+      {/* Стеклянный тост-уведомление в стиле Liquid Glass */}
       <div className="backdrop-blur-lg rounded-2xl p-3 flex items-center gap-2 shadow-lg glass-toast"
         style={{ backgroundColor: theme.bgSecondary + 'F0', border: `1px solid ${theme.bgCardBorder}` }}>
         {icons[latest.type]}
